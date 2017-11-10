@@ -25,8 +25,7 @@ CGITEST_OBJ = $(CGITEST_SRC:%.c=%.o)
 
 DLIBS += -lneo_cgi -lneo_cs -lneo_utl -lstreamhtmlparser # -lefence
 
-TARGETS = $(CGI_LIB) $(STATIC_EXE) $(STATIC_CSO) $(CGICSTEST_EXE) \
-	$(CGITEST_EXE) test
+TARGETS = $(CGI_LIB) $(STATIC_EXE) 
 
 CGI_CS_TESTS = test_cgi_funcs.cs test_cgi_escaping.cs
 CGI_CS_AUTO_TESTS = test_cgi_auto.cs
