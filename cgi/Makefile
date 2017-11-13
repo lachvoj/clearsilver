@@ -25,7 +25,7 @@ CGITEST_OBJ = $(CGITEST_SRC:%.c=%.o)
 
 DLIBS += -lneo_cgi -lneo_cs -lneo_utl -lstreamhtmlparser # -lefence
 
-TARGETS = $(CGI_LIB) $(STATIC_EXE) 
+TARGETS = $(CGI_LIB) $(STATIC_EXE) $(STATIC_CSO) $(CGICSTEST_EXE) $(CGITEST_EXE) test
 
 CGI_CS_TESTS = test_cgi_funcs.cs test_cgi_escaping.cs
 CGI_CS_AUTO_TESTS = test_cgi_auto.cs
@@ -40,6 +40,9 @@ $(STATIC_EXE): $(STATIC_OBJ) $(DEP_LIBS)
 	$(LD) $@ $(STATIC_OBJ) $(LDFLAGS) $(DLIBS) $(LIBS)
 
 $(STATIC_CSO): $(STATIC_OBJ) $(DEP_LIBS)
+	@echo "haluska1"
+	@echo $(LDSHARED)
+	@echo "haluska2"
 	$(LDSHARED) -o $@ $(STATIC_OBJ) $(LDFLAGS) $(DLIBS) $(LIBS)
 
 $(CGICSTEST_EXE): $(CGICSTEST_OBJ) $(DEP_LIBS)
